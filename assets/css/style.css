@@ -7,7 +7,7 @@ body {
     text-align: center;
 }
 
-h1{
+h1 {
     font-family: 'Exo 2', sans-serif;
 }
 
@@ -20,7 +20,7 @@ h1{
 }
 
 #selected-area {
-    padding: 100px;
+    padding: 50px;
     margin: 0 auto;
     font-size: 4rem; 
 }
@@ -34,6 +34,24 @@ h1{
     padding: 30px 0 30px 0;
 }
 
+#win-loss {
+    font-size: 3rem;
+}
+
+#submit {
+    font-size: 3rem;
+    padding: 30px;
+    color: #445361;
+    background-color: gainsboro;
+    border: none;
+    box-sizing: border-box;
+    border: 2px solid gainsboro;
+}
+
+#submit:hover {
+    border: 2px solid #445361;
+}
+
 
 /* ----SELECTION AREA---- */
 #selections {
@@ -42,8 +60,22 @@ h1{
 }
 
 .btn {
-    height: 5rem;
-    width: 5rem;
+    height: 7rem;
+    width: 7rem;
     font-size: 4rem;
     margin: 30px;
+    background-color: transparent;
+    border: none;
+    padding: 30px;
+    overflow: clip;
+}
+
+.btn i {
+    border-radius: 30px;
+}
+
+.btn i:hover {
+    background-color: rgb(187, 186, 186);
+    
+
 }
