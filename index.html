@@ -4,9 +4,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="description" content="Rock-Paper-Scissors-Lizard-Spock game">
+    <title>R-P-S-L-S</title>
 </head>
 <body>
+    <header id="logo-text-outer">
+        <h1 id="logo-text">Rock-Paper-Scissors-Lizard-Spock</h1>
+    </header>
+    <main> 
+        <!-- ----GAME AREA---- -->
+        <div id="game-outer">
+            <div id="selected-area">
+                <div id="player-selected"></div>
+                <h2>VS</h2>
+                <div id="computer-selected"></div>
+            </div>
+            <div id="selections">
+                <button class="btn"><i class="fa-solid fa-hand-back-fist"></i></button>
+                <button class="btn"><i class="fa-solid fa-hand"></i></button>
+                <button class="btn"><i class="fa-solid fa-hand-scissors"></i></button>
+                <button class="btn"><i class="fa-solid fa-hand-lizard"></i></button>
+                <button class="btn"><i class="fa-solid fa-hand-spock"></i></button>
+            </div>
+        </div>
+        <section id="score-area">
+            <p>WINS: <span id="wins">0</span></p>
+            <p>LOSSES: <span id="losses">0</span></p>
+        </section>
+
+        <script src="https://kit.fontawesome.com/3a277d453b.js" crossorigin="anonymous"></script>
+        <script src="assets/js/script.js"></script>
+    </main>
+
     
 </body>
 </html>
