@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans&family=Exo+2&display=swap');
+
+body {
+    background-color: white;
+    font-family: 'Alegreya Sans', sans-serif;
+    color: #445361;
+    text-align: center;
+}
+
+h1{
+    font-family: 'Exo 2', sans-serif;
+}
+
+/* ----GAME AREA---- */
+#game-outer {
+    width: 80%;
+    height: 800px;
+    background-color: Gainsboro;
+    margin: 0 auto;
+}
+
+#selected-area {
+    padding: 100px;
+    margin: 0 auto;
+    font-size: 4rem; 
+}
+#selected-area h2 {
+    font-size: 3rem; 
+}
+
+.selected-area {
+    display: inline-block;
+    width: 30%;
+    padding: 30px 0 30px 0;
+}
+
+
+/* ----SELECTION AREA---- */
+#selections {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.btn {
+    height: 5rem;
+    width: 5rem;
+    font-size: 4rem;
+    margin: 30px;
+}

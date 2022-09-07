@@ -10,22 +10,22 @@
 </head>
 <body>
     <header id="logo-text-outer">
-        <h1 id="logo-text">Rock-Paper-Scissors-Lizard-Spock</h1>
+        <h1 id="logo-text">Rock Paper Scissors Lizard Spock</h1>
     </header>
     <main> 
         <!-- ----GAME AREA---- -->
         <div id="game-outer">
             <div id="selected-area">
-                <div id="player-selected"></div>
-                <h2>VS</h2>
-                <div id="computer-selected"></div>
+                <div id="player-selected" class="selected selected-area"><i class="fa-solid fa-hands-clapping"></i></div>
+                <h2 class="selected-area">VS</h2>
+                <div id="computer-selected" class="selected selected-area"><i class="fa-solid fa-hands-clapping"></i></div>
             </div>
             <div id="selections">
-                <button class="btn"><i class="fa-solid fa-hand-back-fist"></i></button>
-                <button class="btn"><i class="fa-solid fa-hand"></i></button>
-                <button class="btn"><i class="fa-solid fa-hand-scissors"></i></button>
-                <button class="btn"><i class="fa-solid fa-hand-lizard"></i></button>
-                <button class="btn"><i class="fa-solid fa-hand-spock"></i></button>
+                <button class="btn" data-type="rock"><i class="fa-solid fa-hand-back-fist"></i></button>
+                <button class="btn" data-type="paper"><i class="fa-solid fa-hand"></i></button>
+                <button class="btn" data-type="scissor"><i class="fa-solid fa-hand-scissors"></i></button>
+                <button class="btn" data-type="lizard"><i class="fa-solid fa-hand-lizard"></i></button>
+                <button class="btn" data-type="spock"><i class="fa-solid fa-hand-spock"></i></button>
             </div>
         </div>
         <section id="score-area">
