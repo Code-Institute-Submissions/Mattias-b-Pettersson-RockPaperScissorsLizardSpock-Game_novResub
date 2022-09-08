@@ -14,15 +14,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
 })
 
-let computerSelectedTimes = 0;
-
+/** Runs the game when the GO button is pressed */
 function runGame() {
     let num = Math.floor(Math.random() * 5) + 1;
-        computerSelectedTimes++
-    if (computerSelectedTimes === 2) {
-        computerSelectedTimes = 0
-        runGame();
-    }
+    
 
     if (num === 1)  {
         displayRock("computer");
@@ -36,10 +31,12 @@ function runGame() {
        displaySpock("computer");
     }
 
-
+    evaluate();
+    
 
 }
 
+/** Updates the players choise when choosing a button */
 function updatePlayerSelection(gameInput) {
     
     if (gameInput === "rock") {
@@ -56,7 +53,45 @@ function updatePlayerSelection(gameInput) {
 
 }
 
+/** Looks if it is a win or loss */
+function evaluate() {
+    let computerSide = document.getElementById("computer-selected").children;
+    let playerSide = document.getElementById("player-selected").children;
 
+    let computerChoosen = (computerSide[0].getAttribute("data-type"))
+    let playerChoosen = (playerSide[0].getAttribute("data-type"))
+
+
+    if (playerChoosen === "notchosen" ) {
+        alert("You haven't choosen a hand!")
+    } else if (playerChoosen === "rock" && (computerChoosen === "lizard" || computerChoosen === "scissor")) {
+        win();
+    } else if (playerChoosen === "paper" && (computerChoosen === "spock" || computerChoosen === "rock")) {
+        win();
+    } else if (playerChoosen === "scissor" && (computerChoosen === "paper" || computerChoosen === "lizard")) {
+        win();
+    } else if (playerChoosen === "lizard" && (computerChoosen === "spock" || computerChoosen === "paper")) {
+        win();
+    } else if (playerChoosen === "spock" && (computerChoosen === "rock" || computerChoosen === "lizard")) {
+        win();
+    } else { 
+        loss();
+    }
+    
+
+}
+
+function win() {
+    document.getElementById("win-loss").innerText = "You win!";
+    document.getElementById("wins").innerText = parseInt(document.getElementById("wins").innerText) + 1;
+}
+
+function loss() {
+    document.getElementById("win-loss").innerText = "You lose!";
+    document.getElementById("losses").innerText = parseInt(document.getElementById("losses").innerText) + 1;
+}
+
+// ---- all display functions below
 
 
 function displayRock(input) {
@@ -65,9 +100,9 @@ function displayRock(input) {
     let playerSide = document.getElementById("player-selected");
     
     if (input === "computer") {
-            computerSide.innerHTML = `<i class="fa-solid fa-hand-back-fist">`
+            computerSide.innerHTML = `<i class="fa-solid fa-hand-back-fist" data-type="rock">`
     } else if (input === "player") {
-        playerSide.innerHTML = `<i class="fa-solid fa-hand-back-fist">`
+        playerSide.innerHTML = `<i class="fa-solid fa-hand-back-fist" data-type="rock">`
     }
 
 }
@@ -78,9 +113,9 @@ function displayPaper(input) {
     let playerSide = document.getElementById("player-selected");
     
     if (input === "computer") {
-            computerSide.innerHTML = `<i class="fa-solid fa-hand"></i>`
+            computerSide.innerHTML = `<i class="fa-solid fa-hand" data-type="paper"></i>`
     } else if (input === "player") {
-        playerSide.innerHTML = `<i class="fa-solid fa-hand"></i>`
+        playerSide.innerHTML = `<i class="fa-solid fa-hand" data-type="paper"></i>`
     }
 
 }
@@ -91,9 +126,9 @@ function displayScissor(input) {
     let playerSide = document.getElementById("player-selected");
     
     if (input === "computer") {
-            computerSide.innerHTML = `<i class="fa-solid fa-hand-scissors">`
+            computerSide.innerHTML = `<i class="fa-solid fa-hand-scissors" data-type="scissor">`
     } else if (input === "player") {
-        playerSide.innerHTML = `<i class="fa-solid fa-hand-scissors">`
+        playerSide.innerHTML = `<i class="fa-solid fa-hand-scissors" data-type="scissor">`
     }
 
 }
@@ -104,9 +139,9 @@ function displayLizard(input) {
     let playerSide = document.getElementById("player-selected");
     
     if (input === "computer") {
-            computerSide.innerHTML = `<i class="fa-solid fa-hand-lizard"></i>`
+            computerSide.innerHTML = `<i class="fa-solid fa-hand-lizard" data-type="lizard"></i>`
     } else if (input === "player"){
-        playerSide.innerHTML = `<i class="fa-solid fa-hand-lizard"></i>`
+        playerSide.innerHTML = `<i class="fa-solid fa-hand-lizard" data-type="lizard"></i>`
     }
 
 }
@@ -117,10 +152,11 @@ function displaySpock(input) {
     let playerSide = document.getElementById("player-selected");
     
     if (input === "computer") {
-            computerSide.innerHTML = `<i class="fa-solid fa-hand-spock"></i>`
+            computerSide.innerHTML = `<i class="fa-solid fa-hand-spock" data-type="spock"></i>`
     } else if (input === "player"){
-        playerSide.innerHTML = `<i class="fa-solid fa-hand-spock"></i>`
+        playerSide.innerHTML = `<i class="fa-solid fa-hand-spock" data-type="spock"></i>`
     }
 
 }
 
+// ---- all display functions above
