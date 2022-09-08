@@ -22,7 +22,7 @@ h1 {
 #selected-area {
     padding: 50px;
     margin: 0 auto;
-    font-size: 4rem; 
+    font-size: 6rem; 
 }
 #selected-area h2 {
     font-size: 3rem; 
@@ -31,11 +31,12 @@ h1 {
 .selected-area {
     display: inline-block;
     width: 30%;
-    padding: 30px 0 30px 0;
+    padding: 20px 0 15px 0;
 }
 
 #win-loss {
     font-size: 3rem;
+    margin-top: 0;
 }
 
 #submit {
@@ -46,10 +47,13 @@ h1 {
     border: none;
     box-sizing: border-box;
     border: 2px solid gainsboro;
+    
 }
 
 #submit:hover {
     border: 2px solid #445361;
+    border-radius: 15px;
+    cursor: pointer;
 }
 
 
@@ -76,6 +80,7 @@ h1 {
 
 .btn i:hover {
     background-color: rgb(187, 186, 186);
+    cursor: pointer;
     
 
 }

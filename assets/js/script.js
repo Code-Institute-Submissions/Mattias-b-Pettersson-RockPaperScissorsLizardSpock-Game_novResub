@@ -7,16 +7,23 @@ document.addEventListener("DOMContentLoaded", function() {
                 runGame();
             } else {
                 let gameInput = this.getAttribute("data-type");
-                updatePlayerSelection;
+                updatePlayerSelection(gameInput);
             }
         })
     }
 
 })
 
-function runGame(gameInput) {
-    let num = math.floor(Math.random() * 4) + 1;
-    
+let computerSelectedTimes = 0;
+
+function runGame() {
+    let num = Math.floor(Math.random() * 5) + 1;
+        computerSelectedTimes++
+    if (computerSelectedTimes === 2) {
+        computerSelectedTimes = 0
+        runGame();
+    }
+
     if (num === 1)  {
         displayRock("computer");
     } else if (num === 2) {
@@ -29,6 +36,24 @@ function runGame(gameInput) {
        displaySpock("computer");
     }
 
+
+
+}
+
+function updatePlayerSelection(gameInput) {
+    
+    if (gameInput === "rock") {
+        displayRock("player");
+    } else if (gameInput === "paper") {
+        displayPaper("player");
+    } else if (gameInput === "scissor") {
+        displayScissor("player");
+    } else if (gameInput === "lizard") {
+        displayLizard("player");
+    } else if (gameInput === "spock") {
+        displaySpock("player");
+    }
+
 }
 
 
@@ -37,11 +62,11 @@ function runGame(gameInput) {
 function displayRock(input) {
 
     let computerSide = document.getElementById("computer-selected");
-    let playerSide = document.getElementById("computer-selected");
+    let playerSide = document.getElementById("player-selected");
     
     if (input === "computer") {
             computerSide.innerHTML = `<i class="fa-solid fa-hand-back-fist">`
-    } else {
+    } else if (input === "player") {
         playerSide.innerHTML = `<i class="fa-solid fa-hand-back-fist">`
     }
 
@@ -50,7 +75,7 @@ function displayRock(input) {
 function displayPaper(input) {
 
     let computerSide = document.getElementById("computer-selected");
-    let playerSide = document.getElementById("computer-selected");
+    let playerSide = document.getElementById("player-selected");
     
     if (input === "computer") {
             computerSide.innerHTML = `<i class="fa-solid fa-hand"></i>`
@@ -63,7 +88,7 @@ function displayPaper(input) {
 function displayScissor(input) {
 
     let computerSide = document.getElementById("computer-selected");
-    let playerSide = document.getElementById("computer-selected");
+    let playerSide = document.getElementById("player-selected");
     
     if (input === "computer") {
             computerSide.innerHTML = `<i class="fa-solid fa-hand-scissors">`
@@ -76,7 +101,7 @@ function displayScissor(input) {
 function displayLizard(input) {
 
     let computerSide = document.getElementById("computer-selected");
-    let playerSide = document.getElementById("computer-selected");
+    let playerSide = document.getElementById("player-selected");
     
     if (input === "computer") {
             computerSide.innerHTML = `<i class="fa-solid fa-hand-lizard"></i>`
@@ -89,7 +114,7 @@ function displayLizard(input) {
 function displaySpock(input) {
 
     let computerSide = document.getElementById("computer-selected");
-    let playerSide = document.getElementById("computer-selected");
+    let playerSide = document.getElementById("player-selected");
     
     if (input === "computer") {
             computerSide.innerHTML = `<i class="fa-solid fa-hand-spock"></i>`
@@ -98,3 +123,4 @@ function displaySpock(input) {
     }
 
 }
+
