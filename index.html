@@ -16,24 +16,26 @@
         <!-- ----GAME AREA---- -->
         <div id="game-outer">
             <div id="selected-area">
-                <div id="player-selected" class="selected selected-area"><i class="fa-solid fa-hands-clapping" data-type="notchosen"></i></div>
-                <h2 class="selected-area">VS</h2>
-                <div id="computer-selected" class="selected selected-area"><i class="fa-solid fa-hands-clapping"></i></div>
+                <div id="player-selected" class="selected selected-area-content"><i class="fa-solid fa-hands-clapping" data-type="not-chosen"></i></div>
+                <h2 class="selected-area-content">VS</h2>
+                <div id="computer-selected" class="selected selected-area-content"><i class="fa-solid fa-hands-clapping"></i></div>
             </div>
             <h2 id="win-loss"></h2>
             <button data-type="submit" id="submit">GO</button>
             <div id="selections">
+                <p>Make a choise</p>
                 <button class="btn"><i class="fa-solid fa-hand-back-fist" data-type="rock"></i></button>
                 <button class="btn"><i class="fa-solid fa-hand" data-type="paper"></i></button>
                 <button class="btn"><i class="fa-solid fa-hand-scissors" data-type="scissor"></i></button>
                 <button class="btn"><i class="fa-solid fa-hand-lizard" data-type="lizard"></i></button>
                 <button class="btn"><i class="fa-solid fa-hand-spock" data-type="spock"></i></button>
             </div>
+            <div id="score-area">
+                <p>WINS: <span id="wins">0</span></p>
+                <p>LOSSES: <span id="losses">0</span></p>
+            </div>
         </div>
-        <section id="score-area">
-            <p>WINS: <span id="wins">0</span></p>
-            <p>LOSSES: <span id="losses">0</span></p>
-        </section>
+        
 
         <script src="https://kit.fontawesome.com/3a277d453b.js" crossorigin="anonymous"></script>
         <script src="assets/js/script.js"></script>
