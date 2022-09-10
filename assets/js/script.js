@@ -48,6 +48,8 @@ function updateScore(outcome, outcomeMessage) {
     document.getElementById(outcome).innerText = parseInt(document.getElementById(outcome).innerText) + 1;
 }
 
+
+/* Make sure the dom is loaded and then adds event listeners for all buttons.*/
 document.addEventListener("DOMContentLoaded", function() {
     let buttons = document.getElementsByTagName("button");
 

@@ -49,7 +49,7 @@ h1 {
     box-sizing: border-box;
     border-radius: 15px;
     /* Keep border here or the button will move when hoverd*/
-    border: 2px solid rgb(189, 189, 189);
+    border: 2px solid rgba(189, 189, 189, .0);
     
 }
 
@@ -94,7 +94,7 @@ h1 {
 
 #score-area p {
     display: inline;
-    width: 3 rem;
+    width:  48px;
     margin: 0 10px 0 10px;
 }
 
