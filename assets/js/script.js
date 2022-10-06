@@ -1,3 +1,18 @@
+/* Make sure the dom is loaded and then adds event listeners for all buttons.*/
+document.addEventListener("DOMContentLoaded", function() {
+    let buttons = document.getElementsByTagName("button");
+
+    for (let button of buttons) {
+        button.addEventListener("click", function() {
+            if (this.getAttribute("data-type") === "submit") {
+                handleSubmitClicked();
+            } else {
+                updatePlayerSelection(this);
+            }
+        });
+    }
+});
+
 /** Handles submit button click */
 function handleSubmitClicked() {
     let playerChoosen = document.getElementById("player-selected").children[0].getAttribute("data-type");
@@ -49,20 +64,4 @@ function updateScore(outcome, outcomeMessage) {
     document.getElementById("win-loss").innerText = outcomeMessage;
     document.getElementById(outcome).innerText = parseInt(document.getElementById(outcome).innerText) + 1;
 }
-
-
-/* Make sure the dom is loaded and then adds event listeners for all buttons.*/
-document.addEventListener("DOMContentLoaded", function() {
-    let buttons = document.getElementsByTagName("button");
-
-    for (let button of buttons) {
-        button.addEventListener("click", function() {
-            if (this.getAttribute("data-type") === "submit") {
-                handleSubmitClicked();
-            } else {
-                updatePlayerSelection(this);
-            }
-        });
-    }
-});
 
