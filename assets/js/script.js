@@ -37,6 +37,8 @@ function evaluate() {
         updateScore("wins", "You win!");
     } else if (playerChoosen === "spock" && (computerChoosen === "rock" || computerChoosen === "lizard")) {
         updateScore("wins", "You win!");
+    } else if (computerChoosen == playerChoosen) {
+        updateScore("draws", "It's a draw!");
     } else {
         updateScore("losses", "You lose!");
     }
